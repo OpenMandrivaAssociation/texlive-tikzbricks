@@ -1,6 +1,6 @@
 Name:		texlive-tikzbricks
-Version:	63952
-Release:	2
+Version:	71933
+Release:	1
 Summary:	Drawing bricks with TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikzbricks
