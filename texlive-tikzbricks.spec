@@ -3,7 +3,7 @@ Version:	71933
 Release:	1
 Summary:	Drawing bricks with TikZ
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tikzbricks
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikzbricks
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzbricks.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzbricks.doc.r%{version}.tar.xz
