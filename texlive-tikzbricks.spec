@@ -1,36 +1,25 @@
-Name:		texlive-tikzbricks
-Version:	71933
-Release:	1
+%global tl_name tikzbricks
+%global tl_revision 73140
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.6
+Release:	%{tl_revision}.1
 Summary:	Drawing bricks with TikZ
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tikzbricks
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/tikzbricks
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzbricks.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzbricks.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzbricks.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/tikzbricks.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(epstopdf-pkg)
+Requires:	texlive(iftex)
+Requires:	texlive(pgf)
+Requires:	texlive(tikz-3dplot)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A small LaTeX package to draw bricks with TikZ. The user can
-modify color, shape, and viewpoint.
+A small LaTeX package to draw bricks with TikZ. The user can modify
+color, shape, and viewpoint.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/tikzbricks
-%doc %{_texmfdistdir}/doc/latex/tikzbricks
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
